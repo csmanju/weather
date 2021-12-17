@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+
+    android:background="@color/white">
+
+   <androidx.appcompat.widget.Toolbar
+       android:id="@+id/toolbar"
+       android:layout_width="match_parent"
+       android:layout_height="?attr/actionBarSize"
+       android:background="@color/white"
+       android:elevation="4dp"
+       android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+       app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="50dp"
+       android:layout_marginTop="0dp"
+       android:visibility="gone"
+       android:background="@drawable/round">
+
+
+   </RelativeLayout>
+
+   <RelativeLayout
+       android:id="@+id/rel"
+       android:visibility="visible"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="16dp">
+
+      <include
+          android:id="@+id/layout_weather_basic"
+          layout="@layout/layout_weather_basic_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="24dp" />
+
+      <include
+          android:id="@+id/layout_weather_additional"
+          layout="@layout/layout_weather_additional_info"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/layout_weather_basic"
+          android:layout_marginTop="16dp" />
+
+
+      <include
+          android:id="@+id/layout_sunset_sunrise"
+          layout="@layout/layout_sunrise_sunset"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true" />
+
+   </RelativeLayout>
+
+
+   <ProgressBar
+       android:id="@+id/progress_circular"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:visibility="gone"
+       android:layout_marginTop="150dp"/>
+
+
+
+
+
+</LinearLayout>
